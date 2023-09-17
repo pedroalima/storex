@@ -2,8 +2,6 @@
 
 export const App = () => {
 	return (
-		<>
-			<div>Hello</div>
-		</>
+		<div>Hello</div>
 	);
 };
