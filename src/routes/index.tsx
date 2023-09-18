@@ -2,7 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 // Pages
 import { Home } from "../pages/home";
 
-export const RoutesApp = () => {
+export const AppRoutes = () => {
 	return (
 		<RouterProvider router={createBrowserRouter(createRoutesFromElements(
 			<Route path="/" element={ <Home /> }>
