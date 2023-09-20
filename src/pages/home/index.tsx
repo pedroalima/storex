@@ -1,10 +1,9 @@
-import { Box, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import { Header } from "../../shared/components/header";
 
 export const Home = () => {
-	const theme = useTheme();
 	return (
-		<Box height="100vh" marginX={theme.spacing(3)} >
+		<Box height="100vh">
 			<Header />
 		</Box>
 	);
