@@ -1,9 +1,11 @@
-import { Button } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
+import { Header } from "../../shared/components/header";
 
 export const Home = () => {
+	const theme = useTheme();
 	return (
-		<div>
-			<Button variant="contained">Home</Button>
-		</div>
+		<Box height="100vh" marginX={theme.spacing(3)} >
+			<Header />
+		</Box>
 	);
 };
