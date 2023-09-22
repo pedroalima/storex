@@ -14,28 +14,20 @@ export const Header = () => {
 	}));
 
 	return (
-		<M.Box sx={{ flexGrow: 1 }}>
-			<M.AppBar position="static" sx={{
-				paddingX: theme.spacing(2), 
-				background: theme.palette.primary.dark
-			}} >
-				<M.Toolbar>
-					<M.Typography variant="h6" component="div" sx={{ 
-						flexGrow: 1, 
-						fontWeight:700 
-					}}>Store X</M.Typography>
-					<M.Box display="flex" justifyContent="space-between" sx={{
-						width: "40%",
-					}}>
-						<M.Button variant="contained" color="secondary" size="small" sx={{ fontWeight:800 }}>Sign in</M.Button>
-						<M.IconButton aria-label="cart" color="secondary">
-							<StyledBadge badgeContent={4} color="secondary">
-								<ShoppingCart />
-							</StyledBadge>
-						</M.IconButton>
-					</M.Box>
-				</M.Toolbar>
-			</M.AppBar>
-		</M.Box>
+		<M.AppBar position="static" sx={{padding: theme.spacing(3), background: theme.palette.primary.dark}} >
+			<M.Box display="flex" justifyContent="space-between">
+				<M.Typography variant="h4" component="h1" fontWeight="600">Store X</M.Typography>
+
+				<M.Box display="flex" justifyContent="space-between" alignItems="center" width="40%">
+					<M.Button variant="text" color="secondary">Sign in</M.Button>
+
+					<M.IconButton color="secondary">
+						<StyledBadge badgeContent={4} color="secondary">
+							<ShoppingCart />
+						</StyledBadge>
+					</M.IconButton>
+				</M.Box>
+			</M.Box>
+		</M.AppBar>
 	);
 };
