@@ -1,3 +1,10 @@
+export type InventoryDataType = {
+	id: number,
+	name: string,
+	price: number,
+	img: string
+}
+
 export const inventoryData = [
 	{
 		id: 1,
