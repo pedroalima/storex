@@ -1,12 +1,13 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 // Pages
 import { Home } from "../pages/home";
 
 export const AppRoutes = () => {
 	return (
-		<RouterProvider router={createBrowserRouter(createRoutesFromElements(
-			<Route path="/" element={ <Home /> }>
-			</Route>
-		))} />
+		<Routes>
+			<Route path="/" element={ <Home /> } />
+
+			<Route path="*" element={ <Navigate to="/" /> } />
+		</Routes>
 	);
 };

@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
 export const Theme = createTheme({
 	palette: {
@@ -15,9 +15,9 @@ export const Theme = createTheme({
 			contrastText: "#242321",
 		},
 		background: {
+			default: "#F9F9F9",
 			paper: "#FFFFFF",
-			default: "#F7F6F3",
-		}
+		},
 	},
 	typography: {
 		fontFamily: "Oxygen",
