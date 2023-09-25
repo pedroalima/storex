@@ -1,9 +1,13 @@
 import * as M from "@mui/material";
-import { InventoryDataType } from "../../utils/data";
+import { ProductType } from "../../utils/data";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cart/cartSlice";
 
-export const InventoryItem = ({ product } : {product: InventoryDataType }) => {
+export const InventoryItem = ({ product } : {product: ProductType }) => {
 	const { name, price, img } = product;
 	const theme = M.useTheme();
+
+	const dispatch = useDispatch();
 
 	return (
 		<M.Card>
@@ -12,12 +16,21 @@ export const InventoryItem = ({ product } : {product: InventoryDataType }) => {
 			</M.Box>
 			
 			<M.CardContent>
-				<M.Typography gutterBottom variant="h5" component="h3">{name}</M.Typography>
-				<M.Typography variant="h6" component="span">{price}</M.Typography>
+				<M.Typography 
+					gutterBottom 
+					variant="h5" 
+					component="h3">{name}</M.Typography>
+				<M.Typography 
+					variant="h6" 
+					component="span">{price}</M.Typography>
 			</M.CardContent>
 
 			<M.CardActions>
-				<M.Button size="small" variant="contained" color="primary">Add to cart</M.Button>
+				<M.Button 
+					size="small" 
+					variant="contained" 
+					onClick={() => dispatch(addProduct(product))}
+					color="primary">Add to cart</M.Button>
 			</M.CardActions>
 		</M.Card>
 	);
