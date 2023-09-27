@@ -5,7 +5,7 @@ export type ProductType = {
 	img: string
 }
 
-export const inventoryData = [
+export const inventoryData: ProductType[] = [
 	{
 		id: 1,
 		name: "Screwdriver",

@@ -3,7 +3,8 @@ import { ProductType } from "../../utils/data";
 
 
 export const ShoppingCartItem = ({ product } : { product : ProductType}) => {
-	const { name, price} = product;
+	const { name, price } = product;
+	
 	return (
 		<M.Card>
 			<M.CardContent>
