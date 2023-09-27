@@ -1,11 +1,13 @@
 import { ShoppingCart } from "@mui/icons-material";
 import * as M from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleDrawer } from "../../redux/drawer-shopping-cart/drawerShoppingCartSlice";
+import { RootState } from "../../redux/store";
+import { ProductType } from "../../utils/data";
 
 export const Header = () => {
 	const theme = M.useTheme();
-
+	const { products } : { products: ProductType[] } = useSelector((state: RootState) => state.cart);
 	const dispatch = useDispatch();
 	
 	const handleToggleDrawer = () => {
@@ -31,7 +33,7 @@ export const Header = () => {
 					<M.Button variant="text" color="secondary">Sign in</M.Button>
 
 					<M.IconButton color="secondary" onClick={handleToggleDrawer}>
-						<StyledBadge badgeContent={4} color="secondary">
+						<StyledBadge badgeContent={products.length} color="secondary">
 							<ShoppingCart />
 						</StyledBadge>
 					</M.IconButton>
