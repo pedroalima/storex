@@ -2,7 +2,6 @@ import { Box, useTheme } from "@mui/material";
 import { Header } from "../../shared/components/header";
 import { Inventory } from "../../shared/components/inventory";
 import { DrawerStore } from "../../shared/components/drawer-shopping-cart";
-import { ModalSignIn } from "../../shared/components/modal-sign-in";
 
 
 export const Home = () => {
@@ -13,8 +12,6 @@ export const Home = () => {
 				<Header />
 				<Inventory />
 			</Box>
-
-			<ModalSignIn />
 		
 			<DrawerStore />
 		</>

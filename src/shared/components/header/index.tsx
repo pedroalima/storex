@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleDrawer } from "../../redux/drawer-shopping-cart/drawerShoppingCartSlice";
 import { RootState } from "../../redux/store";
 import { ProductType } from "../../utils/data";
+import { MenuPopupState } from "../menu-popup-state";
 
 export const Header = () => {
 	const theme = M.useTheme();
@@ -30,7 +31,7 @@ export const Header = () => {
 				<M.Typography variant="h4" component="h1" fontWeight="600">Store X</M.Typography>
 
 				<M.Box display="flex" justifyContent="space-between" alignItems="center" width="40%">
-					<M.Button variant="text" color="secondary">Sign in</M.Button>
+					<MenuPopupState />
 
 					<M.IconButton color="secondary" onClick={handleToggleDrawer}>
 						<StyledBadge badgeContent={products.length} color="secondary">
