@@ -3,7 +3,7 @@ import * as M from "@mui/material";
 export const ModalSignIn = () => {
 
 	const style = {
-		position: "absolute" as const,
+		position: "absolute",
 		top: "50%",
 		left: "50%",
 		transform: "translate(-50%, -50%)",
@@ -25,12 +25,8 @@ export const ModalSignIn = () => {
 				</M.Typography>
 				<M.Input id="email" placeholder="Email" />
 				<M.Input id='password' placeholder="Password" />
+				<M.Button>Confirm</M.Button>
 			</M.Box>
 		</M.Modal>
-		// <M.Modal open={true}>
-		// 	<M.Box width="50%" sx={{ background: "white", }}>
-		// 		<M.Typography >Sign In</M.Typography>
-		// 	</M.Box>
-		// </M.Modal>
 	);
 };
