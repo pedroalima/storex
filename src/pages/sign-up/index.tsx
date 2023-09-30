@@ -1,6 +1,6 @@
 import * as M from "@mui/material";
 
-export const SignIn = () => {
+export const SignUp = () => {
 	const theme = M.useTheme();
 
 	return (
@@ -23,18 +23,34 @@ export const SignIn = () => {
 				sx={{background: theme.palette.background.paper}} 
 			>
 				<M.TextField 
-					type="email"
-					id="standard-basic" 
-					label="Login" 
+					type="email" 
+					required 
+					id="email" 
+					label="E-mail" 
+					variant="standard" 
+				/>
+				<M.TextField 
+					type="email" 
+					required 
+					id="confirmEmail" 
+					label="Confirm E-mail" 
 					variant="standard" 
 				/>
 				<M.TextField 
 					type="password" 
-					id="standard-basic" 
+					required 
+					id="password" 
 					label="Password" 
 					variant="standard" 
 				/>
-				<M.Button variant="contained">Confirm</M.Button>
+				<M.TextField 
+					type="password" 
+					required 
+					id="confirmPassword" 
+					label="Confirm Password" 
+					variant="standard" 
+				/>
+				<M.Button variant="contained">Create</M.Button>
 			</M.Box>
 		</M.Box>
 	);
