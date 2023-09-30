@@ -5,6 +5,7 @@ import { toggleDrawer } from "../../redux/drawer-shopping-cart/drawerShoppingCar
 import { RootState } from "../../redux/store";
 import { ProductType } from "../../utils/data";
 import { MenuPopupState } from "../menu-popup-state";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
 	const theme = M.useTheme();
@@ -28,7 +29,9 @@ export const Header = () => {
 	return (
 		<M.AppBar position="static" sx={{padding: theme.spacing(3), background: theme.palette.primary.dark}} >
 			<M.Box display="flex" justifyContent="space-between">
-				<M.Typography variant="h4" component="h1" fontWeight="600">Store X</M.Typography>
+				<Link to="/">
+					<M.Typography variant="h4" component="h1" fontWeight="600">Store X</M.Typography>
+				</Link>
 
 				<M.Box display="flex" justifyContent="space-between" alignItems="center" width="40%">
 					<MenuPopupState />

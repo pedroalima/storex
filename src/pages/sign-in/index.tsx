@@ -24,13 +24,13 @@ export const SignIn = () => {
 			>
 				<M.TextField 
 					type="email"
-					id="standard-basic" 
-					label="Login" 
+					id="email" 
+					label="E-mail" 
 					variant="standard" 
 				/>
 				<M.TextField 
 					type="password" 
-					id="standard-basic" 
+					id="password" 
 					label="Password" 
 					variant="standard" 
 				/>
