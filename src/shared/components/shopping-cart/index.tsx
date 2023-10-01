@@ -3,9 +3,11 @@ import { ShoppingCartItem } from "../shopping-cart-item";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { ProductType } from "../../utils/data";
+import { useNavigate } from "react-router-dom";
 
 export const ShoppingCart = () => {
 	const theme = M.useTheme();
+	const navigate = useNavigate();
 
 	const { products } : { products: ProductType[] } = useSelector((state: RootState) => state.cart);
 
@@ -17,7 +19,7 @@ export const ShoppingCart = () => {
 				<ShoppingCartItem key={product.id} product={product} />
 			))}
 			
-			<M.Button variant="outlined">To buy</M.Button>
+			<M.Button variant="outlined" onClick={()=> navigate("/acknowledgment")}>To buy</M.Button>
 		</M.Box>
 	);
 };
