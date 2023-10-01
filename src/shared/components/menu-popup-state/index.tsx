@@ -1,24 +1,48 @@
 import * as M from "@mui/material";
-import { Link } from "react-router-dom";
-import {
-	usePopupState,
-	bindTrigger,
-	bindMenu,
-} from "material-ui-popup-state/hooks";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
   
 export const MenuPopupState = () => {
-	const popupState = usePopupState({ variant: "popover", popupId: "demoMenu" });
+	const navigate = useNavigate();
+	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+	const open = Boolean(anchorEl);
+	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+		setAnchorEl(event.currentTarget);
+	};
+
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
+
+	const handleCloseSignIn = () => {
+		navigate("/sign-in");
+		handleClose();
+	};
+
+	const handleCloseSignUp = () => {
+		navigate("/sign-up");
+		handleClose();
+	};
 
 	return (
 		<>
-			<M.Button variant="contained" {...bindTrigger(popupState)}>Profile</M.Button>
-			<M.Menu {...bindMenu(popupState)}>
-				<M.MenuItem onClick={popupState.close}>
-					<Link to="/sign-in">Sign In</Link> 
-				</M.MenuItem>
-				<M.MenuItem onClick={popupState.close}>
-					<Link to="/sign-up">Sign Up</Link>
-				</M.MenuItem>
+			<M.Button 
+				variant="contained" 
+				id="basic-button"
+				aria-controls={open ? "basic-menu" : undefined}
+				aria-haspopup="true"
+				aria-expanded={open ? "true" : undefined}
+				onClick={handleClick}
+			>Profile</M.Button>
+			<M.Menu 
+				id="basic-menu"
+				anchorEl={anchorEl}
+				open={open}
+				onClose={handleClose}
+				MenuListProps={{"aria-labelledby": "basic-button"}}
+			>
+				<M.MenuItem onClick={handleCloseSignIn}>Sign In</M.MenuItem>
+				<M.MenuItem onClick={handleCloseSignUp}>Sign Up</M.MenuItem>
 			</M.Menu>
 		</>
 	);
