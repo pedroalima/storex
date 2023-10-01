@@ -3,9 +3,10 @@ import * as M from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDrawer } from "../../redux/drawer-shopping-cart/drawerShoppingCartSlice";
 import { RootState } from "../../redux/store";
-import { ProductType } from "../../utils/data";
+
 import { MenuPopupState } from "../menu-popup-state";
 import { useNavigate } from "react-router-dom";
+import { ProductType } from "../inventory-item";
 
 export const Header = () => {
 	const theme = M.useTheme();

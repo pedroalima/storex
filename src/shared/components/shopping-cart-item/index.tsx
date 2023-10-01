@@ -1,16 +1,15 @@
 import * as M from "@mui/material";
-import { ProductType } from "../../utils/data";
+import { ProductTypeCart } from "../shopping-cart";
 
-
-export const ShoppingCartItem = ({ product } : { product : ProductType}) => {
-	const { name, price } = product;
+export const ShoppingCartItem = ({ product } : { product : ProductTypeCart}) => {
+	const { name, price, quantity } = product;
 	
 	return (
 		<M.Card>
 			<M.CardContent>
 				<M.Typography>Product: {name}</M.Typography>
 				<M.Typography>Value: {price}</M.Typography>
-				<M.Typography>Quantity: 1</M.Typography>
+				<M.Typography>Quantity: {quantity}</M.Typography>
 			</M.CardContent>
 		</M.Card>
 	);
