@@ -1,7 +1,13 @@
 import * as M from "@mui/material";
-import { ProductType } from "../../utils/data";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cart/cartSlice";
+
+export type ProductType = {
+	id: number,
+	name: string,
+	price: number,
+	img: string,
+}
 
 export const InventoryItem = ({ product } : {product: ProductType }) => {
 	const { name, price, img } = product;

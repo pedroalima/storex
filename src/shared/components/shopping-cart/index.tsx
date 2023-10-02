@@ -2,14 +2,21 @@ import * as M from "@mui/material";
 import { ShoppingCartItem } from "../shopping-cart-item";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { ProductType } from "../../utils/data";
 import { useNavigate } from "react-router-dom";
+
+export type ProductTypeCart = {
+	id: number,
+	name: string,
+	price: number,
+	img: string,
+	quantity: number
+}
 
 export const ShoppingCart = () => {
 	const theme = M.useTheme();
 	const navigate = useNavigate();
 
-	const { products } : { products: ProductType[] } = useSelector((state: RootState) => state.cart);
+	const { products } : { products: ProductTypeCart[] } = useSelector((state: RootState) => state.cart);
 
 	return (
 		<M.Box p={theme.spacing(4)} display="flex" flexDirection="column" gap={theme.spacing(4)}>

@@ -1,11 +1,4 @@
-export type ProductType = {
-	id: number,
-	name: string,
-	price: number,
-	img: string
-}
-
-export const inventoryData: ProductType[] = [
+export const inventoryData = [
 	{
 		id: 1,
 		name: "Screwdriver",
