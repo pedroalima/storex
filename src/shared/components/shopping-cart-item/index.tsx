@@ -1,6 +1,6 @@
 import * as M from "@mui/material";
 import { useDispatch } from "react-redux";
-import { ProductTypeCart, removeProduct } from "../../redux/cart/cartSlice";
+import { ProductTypeCart, increaseQuantityProduct, removeProduct } from "../../redux/cart/cartSlice";
 
 export const ShoppingCartItem = ({ product } : { product : ProductTypeCart}) => {
 	const dispatch = useDispatch();
@@ -10,12 +10,16 @@ export const ShoppingCartItem = ({ product } : { product : ProductTypeCart}) => 
 		dispatch(removeProduct(product));
 		console.log("Click");
 	};
+
+	const handleIncreaseQuantityProduct = () => {
+		dispatch(increaseQuantityProduct(product));
+	};
 	
 	return (
 		<M.Card>
 			<M.Box display="flex">
 				<M.Box display="flex" flexDirection="column" justifyContent="space-around">
-					<M.IconButton>
+					<M.IconButton onClick={handleIncreaseQuantityProduct}>
 						<M.Icon fontSize="small">add</M.Icon>
 					</M.IconButton>
 					<M.IconButton>
