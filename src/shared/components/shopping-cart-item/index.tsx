@@ -1,7 +1,6 @@
 import * as M from "@mui/material";
-import { ProductTypeCart } from "../shopping-cart";
 import { useDispatch } from "react-redux";
-import { removeProduct } from "../../redux/cart/cartSlice";
+import { ProductTypeCart, removeProduct } from "../../redux/cart/cartSlice";
 
 export const ShoppingCartItem = ({ product } : { product : ProductTypeCart}) => {
 	const dispatch = useDispatch();

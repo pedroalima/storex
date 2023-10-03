@@ -3,14 +3,7 @@ import { ShoppingCartItem } from "../shopping-cart-item";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useNavigate } from "react-router-dom";
-
-export type ProductTypeCart = {
-	id: number,
-	name: string,
-	price: number,
-	img: string,
-	quantity: number
-}
+import { ProductTypeCart } from "../../redux/cart/cartSlice";
 
 export const ShoppingCart = () => {
 	const theme = M.useTheme();
