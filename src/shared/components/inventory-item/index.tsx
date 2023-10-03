@@ -15,6 +15,10 @@ export const InventoryItem = ({ product } : {product: ProductType }) => {
 
 	const dispatch = useDispatch();
 
+	const handleAddProduct = () => {
+		dispatch(addProduct(product));
+	};
+
 	return (
 		<M.Card>
 			<M.Box paddingY={theme.spacing(2)} display="flex" justifyContent="center" >
@@ -35,7 +39,7 @@ export const InventoryItem = ({ product } : {product: ProductType }) => {
 				<M.Button 
 					size="small" 
 					variant="contained" 
-					onClick={() => dispatch(addProduct(product))}
+					onClick={handleAddProduct}
 					color="primary">Add to cart</M.Button>
 			</M.CardActions>
 		</M.Card>
