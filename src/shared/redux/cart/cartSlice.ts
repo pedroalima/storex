@@ -47,6 +47,17 @@ export const cartSlice = createSlice({
 						product;
 				}
 			});
+		},
+		decreaseQuantityProduct: (state: CartStateType, action: CartActionType) => {
+			state.products.map(product => {
+				if (product.id === action.payload.id) {
+					if (product.quantity) {
+						product.quantity > 1 ? 
+							product.quantity -= 1 : 
+							state.products = state.products.filter(product => product.id !== action.payload.id);
+					}
+				}
+			});
 		}
 	}
 });
@@ -54,7 +65,8 @@ export const cartSlice = createSlice({
 export const { 
 	addProduct,
 	removeProduct,
-	increaseQuantityProduct 
+	increaseQuantityProduct,
+	decreaseQuantityProduct 
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
