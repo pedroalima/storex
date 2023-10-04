@@ -5,11 +5,14 @@ import { RootState } from "../../redux/store";
 import { useNavigate } from "react-router-dom";
 import { ProductTypeCart } from "../../redux/cart/cartSlice";
 import { toggleDrawer } from "../../redux/drawer-shopping-cart/drawerShoppingCartSlice";
+import { selectorTotalPrice } from "../../redux/cart/selector";
 
 export const ShoppingCart = () => {
 	const theme = M.useTheme();
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
+	const totalPrice = useSelector(selectorTotalPrice);
+	const { products } : { products: ProductTypeCart[] } = useSelector((state: RootState) => state.cart);
 
 	const handleBuyNow = () => {
 		// forward to route
@@ -18,8 +21,6 @@ export const ShoppingCart = () => {
 		dispatch(toggleDrawer());
 	};
 
-	const { products } : { products: ProductTypeCart[] } = useSelector((state: RootState) => state.cart);
-
 	return (
 		<M.Box p={theme.spacing(4)} display="flex" flexDirection="column" gap={theme.spacing(4)}>
 			<M.Typography variant="h5" component="h3" >Shopping Cart</M.Typography>
@@ -27,6 +28,8 @@ export const ShoppingCart = () => {
 			{products && products.map((product) => (
 				<ShoppingCartItem key={product.id} product={product} />
 			))}
+
+			<M.Typography variant="h6">Total: {totalPrice}</M.Typography>
 			
 			<M.Button variant="contained" onClick={handleBuyNow}>Buy now</M.Button>
 		</M.Box>
