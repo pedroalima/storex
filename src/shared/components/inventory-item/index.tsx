@@ -1,6 +1,7 @@
 import * as M from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cart/cartSlice";
+import { currency } from "../../utils/local-currency";
 
 export type ProductType = {
 	id: number,
@@ -32,7 +33,7 @@ export const InventoryItem = ({ product } : {product: ProductType }) => {
 					component="h3">{name}</M.Typography>
 				<M.Typography 
 					variant="h6" 
-					component="span">{price}</M.Typography>
+					component="span">{currency(price)}</M.Typography>
 			</M.CardContent>
 
 			<M.CardActions>

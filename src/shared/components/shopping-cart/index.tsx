@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { ProductTypeCart } from "../../redux/cart/cartSlice";
 import { toggleDrawer } from "../../redux/drawer-shopping-cart/drawerShoppingCartSlice";
 import { selectorTotalPrice } from "../../redux/cart/selector";
+import { currency } from "../../utils/local-currency";
 
 export const ShoppingCart = () => {
 	const theme = M.useTheme();
@@ -29,7 +30,7 @@ export const ShoppingCart = () => {
 				<ShoppingCartItem key={product.id} product={product} />
 			))}
 
-			<M.Typography variant="h6">Total: {totalPrice}</M.Typography>
+			<M.Typography variant="h6">Total: {currency(totalPrice)}</M.Typography>
 			
 			<M.Button variant="contained" onClick={handleBuyNow}>Buy now</M.Button>
 		</M.Box>
