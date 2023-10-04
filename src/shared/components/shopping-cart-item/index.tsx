@@ -1,6 +1,7 @@
 import * as M from "@mui/material";
 import { useDispatch } from "react-redux";
 import { ProductTypeCart, decreaseQuantityProduct, increaseQuantityProduct, removeProduct } from "../../redux/cart/cartSlice";
+import { currency } from "../../utils/local-currency";
 
 export const ShoppingCartItem = ({ product } : { product : ProductTypeCart}) => {
 	const theme = M.useTheme();
@@ -33,7 +34,7 @@ export const ShoppingCartItem = ({ product } : { product : ProductTypeCart}) => 
 				
 				<M.Box padding={theme.spacing(2)} flexGrow={1}>
 					<M.Typography>Product: {name}</M.Typography>
-					<M.Typography>Value: {price}</M.Typography>
+					<M.Typography>Value: {currency(price)}</M.Typography>
 					<M.Typography>Quantity: {quantity}</M.Typography>
 				</M.Box>
 
