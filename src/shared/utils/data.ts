@@ -47,16 +47,4 @@ export const inventoryData = [
 		price: 0.99,
 		img: "https://cdn-icons-png.flaticon.com/512/57/57108.png",
 	},
-	{
-		id: 9,
-		name: "Jackhammer",
-		price: 24.99,
-		img: "https://cdn-icons-png.flaticon.com/512/57/57108.png",
-	},
-	{
-		id: 10,
-		name: "Trowel",
-		price: 13.99,
-		img: "https://cdn-icons-png.flaticon.com/512/57/57108.png",
-	},
 ];

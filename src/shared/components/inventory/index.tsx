@@ -6,7 +6,13 @@ export const Inventory = () => {
 	const theme = M.useTheme();
 
 	return (
-		<M.Box p={theme.spacing(4)} display="flex" flexDirection="column" gap={theme.spacing(4)}>
+		<M.Box 
+			margin={theme.spacing(4)}
+			display="flex"
+			justifyContent="space-around"
+			flexWrap="wrap"
+			gap={theme.spacing(4)}
+		>
 			{inventoryData.map( product => (
 				<InventoryItem key={product.id} product={product} />
 			))}
