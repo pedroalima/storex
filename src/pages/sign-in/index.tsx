@@ -17,7 +17,7 @@ export const SignIn = () => {
 			<M.Box component="form" 
 				width={
 					smDown ? 
-						"80%" :
+						"75%" :
 						lgDown ?
 							"25%" :
 							"18%"
