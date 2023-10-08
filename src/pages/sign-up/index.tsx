@@ -2,6 +2,8 @@ import * as M from "@mui/material";
 
 export const SignUp = () => {
 	const theme = M.useTheme();
+	const smDown = M.useMediaQuery(theme.breakpoints.down("sm"));
+	const lgDown = M.useMediaQuery(theme.breakpoints.down("lg"));
 
 	return (
 		<M.Box component="section" 
@@ -13,6 +15,13 @@ export const SignUp = () => {
 			padding={theme.spacing(3)}
 		>
 			<M.Box component="form" 
+				width={
+					smDown ?
+						"75%" :
+						lgDown ? 
+							"30%" :
+							"20%"
+				}
 				border={`1px solid ${theme.palette.primary.dark}`}
 				borderRadius="20px"
 				padding={theme.spacing(3)}
