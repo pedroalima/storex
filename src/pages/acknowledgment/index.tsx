@@ -9,6 +9,7 @@ export const Acknowledgment = () => {
 			padding={theme.spacing(3)}
 			height="88vh" 
 			display="flex"
+			justifyContent="center"
 			alignItems="center"
 		>
 			<M.Box 
