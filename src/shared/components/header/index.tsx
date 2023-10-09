@@ -28,7 +28,11 @@ export const Header = () => {
 	};
 
 	return (
-		<M.AppBar position="static" sx={{padding: theme.spacing(3), background: theme.palette.primary.dark}} >
+		<M.AppBar position="static" sx={
+			smDown ? 
+				{padding: theme.spacing(3), background: theme.palette.primary.dark} : 
+				{paddingX: theme.spacing(5), paddingY: theme.spacing(3), background: theme.palette.primary.dark}
+		}>
 			<M.Box display="flex" justifyContent="space-between">
 				<M.Typography variant="h4" component="h1" fontWeight="600" onClick={()=>navigate("/")} >Store X</M.Typography>
 
