@@ -7,7 +7,7 @@ export const Inventory = () => {
 
 	return (
 		<M.Box 
-			margin={theme.spacing(4)}
+			padding={theme.spacing(4)}
 			display="flex"
 			justifyContent="space-around"
 			flexWrap="wrap"
